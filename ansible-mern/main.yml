@@ -1,0 +1,13 @@
+---
+- hosts: your_ec2_ip
+  become: yes
+  roles:
+    - role: backend
+      vars_files:
+        - roles/backend/vars/backendvars.yml
+    - role: database
+      vars_files:
+        - roles/database/vars/dbvars.yml
+    - role: frontend
+      vars_files:
+        - roles/frontend/vars/frontendvars.yml
